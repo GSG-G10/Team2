@@ -1,11 +1,11 @@
-const {Pool} = require('pg')
-require('env2')('../config.env')
-const DB_Url = process.env.DB_Url;
+require('env2')('.env');
+const { Pool } = require('pg');
 
+const { DB_URL } = process.env;
 
 const options = {
-    connectionString: DB_Url,
-    ssl: { rejectUnauthorized: false },
-  };
-  
-  module.exports = new Pool(options);
+  connectionString: DB_URL,
+  ssl: { rejectUnauthorized: false },
+};
+
+module.exports = new Pool(options);
