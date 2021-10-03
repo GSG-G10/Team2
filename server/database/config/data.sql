@@ -27,10 +27,10 @@ CREATE TABLE item (
     id SERIAL PRIMARY KEY,
     product_id  integer  REFERENCES product(id),
     imgUrl text,
-    color text DEFAULT "gray"
+    color text 
 );
 CREATE TABLE cart (
-    user_id integer PRIMARY KEY REFERENCES users(id)
+    user_id integer PRIMARY KEY REFERENCES users(id),
     product_id  integer  REFERENCES product(id),
     quantity integer
 );
