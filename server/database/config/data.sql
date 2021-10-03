@@ -20,18 +20,18 @@ CREATE TABLE product (
     price integer,
     description text NOT NULL,
     rate integer,
-    category_id  integer REFERENCES category(id),
+    category_id integer REFERENCES category(id),
     material text
 );
 CREATE TABLE item (
     id SERIAL PRIMARY KEY,
-    product_id  integer  REFERENCES product(id),
+    product_id integer REFERENCES product(id),
     imgUrl text,
-    color text DEFAULT "gray"
+    color text color text DEFAULT ('gray')
 );
 CREATE TABLE cart (
-    user_id integer PRIMARY KEY REFERENCES users(id)
-    product_id  integer  REFERENCES product(id),
+    user_id integer PRIMARY KEY REFERENCES users(id),
+    product_id integer REFERENCES product(id),
     quantity integer
 );
 COMMIT;
