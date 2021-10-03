@@ -1,6 +1,11 @@
 const connection = require('../connection');
 
-const addUserQuery = (name, email, password, isAdmin, imgUrl) => connection.query('INSERT INTO users (name, email, password, isAdmin, imgUrl) VALUES
-($1, $2, $3, $4, $5);', [name, email, password, isAdmin, imgUrl]);
+const addUser = (name, email, password) => {
+  const sql = {
+    text: 'INSERT INTO users (username, password, email) VALUES($1,$2,$3) RETURNING *',
+    values: [username, password, email],
+  };
 
-module.exports = addUserQuery;
+  return connection.query(sql);
+};
+module.exports = addUser;

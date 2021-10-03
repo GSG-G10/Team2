@@ -4,15 +4,15 @@ const { signUpValidation } = require('../utiles/validation');
 
 const addUserHandler = (req, res) => {
   const {
-    name, email, password, isAdmin, imgUrl,
+    name, email, password,
   } = req.body;
   const { error } = signUpValidation.validate({
-    name, email, password, isAdmin, imgUrl,
+    name, email, password,
   });
   if (error === undefined) {
     hashPassword(password)
       .then((hashpass) => {
-        addUserQuery(name, email, hashpass, isAdmin, imgUrl)
+        addUserQuery(name, email, hashpass)
           .then(() => res.json({ status: 'scusses' }))
           .catch((err) => res.json({ status: 'err', error: err }));
       })
