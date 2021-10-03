@@ -7,7 +7,7 @@ const addUserHandler = (req, res) => {
     name, email, password, isAdmin, imgUrl,
   } = req.body;
   const { error } = signUpValidation.validate({
-    name, email, password, isAdmin, imgUrl,
+    name, email, password, isdmin: isAdmin, imgUrl,
   });
   if (error === undefined) {
     hashPassword(password)
