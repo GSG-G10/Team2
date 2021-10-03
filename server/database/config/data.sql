@@ -20,12 +20,12 @@ CREATE TABLE product (
     price integer,
     description text NOT NULL,
     rate integer,
-    category_id  integer REFERENCES category(id),
+    category_id integer REFERENCES category(id),
     material text
 );
 CREATE TABLE item (
     id SERIAL PRIMARY KEY,
-    product_id  integer  REFERENCES product(id),
+    product_id integer REFERENCES product(id),
     imgUrl text,
     color text 
 );
