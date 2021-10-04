@@ -1,4 +1,4 @@
 const connection = require('../connection');
 
-const getSingleProduct =(product_id)=>connection.query('select * from product where product_id=$1',[product_id])
+const getSingleProduct =(productId)=>connection.query('select * from product where product_id=$1',[productId])
 module.exports=getSingleProduct;

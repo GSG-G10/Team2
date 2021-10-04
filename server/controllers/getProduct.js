@@ -1,8 +1,8 @@
 
 const getProduct = (req,res)=>{
-    const {product_id}=req.params;
-    getSingleProduct(product_id)
-    .then(() => res.json({ status: 'scusses' }))
+    const {productId}=req.params;
+    getSingleProduct(productId)
+    .then((data) => res.json(data.rows))
     .catch((err) => res.json({ status: 'err', error: err }));
 
 }
