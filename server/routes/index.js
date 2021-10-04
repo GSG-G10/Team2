@@ -6,5 +6,5 @@ const router = express.Router();
 
 router.post('/singup', addUserHandler);
 router.post('/addcard', addCardHandler);
-router.get('/api/product/:id',getProduct)
+router.get('/api/product/:productId',getProduct)
 module.exports = router;
