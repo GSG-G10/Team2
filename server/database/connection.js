@@ -4,7 +4,6 @@ const { Pool } = require('pg');
 const {
   NODE_ENV, DB_URL, DATABASE_URL, TEST_DB_URL,
 } = process.env;
-
 let dburl = '';
 switch (NODE_ENV) {
   case 'production':
