@@ -1,8 +1,10 @@
-const Joi = require('joi');
+const joi = require('joi');
 
-const logInValidation = Joi.object({
-  email: Joi.string().email().required(),
-  password: Joi.string().min(6).required(),
-});
+exports.loginValidation = (data) => {
+  const schema = joi.object({
+    email: joi.string().email().required(),
+    password: joi.string().min(6).required(),
+  });
 
-module.exports = logInValidation;
+  return schema.validate(data);
+};
