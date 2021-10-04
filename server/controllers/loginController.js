@@ -24,5 +24,5 @@ exports.loginPost = async (req, res) => {
 };
 
 exports.loginGet = (req, res) => {
-  res.json({'login page'})
+  res.json({ message: 'login page' });
 };
