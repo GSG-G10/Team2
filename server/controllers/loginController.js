@@ -24,5 +24,5 @@ exports.loginPost = async (req, res) => {
 };
 
 exports.loginGet = (req, res) => {
-  res.send('home page');
+  res.json({'login page'})
 };

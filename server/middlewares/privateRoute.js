@@ -3,8 +3,7 @@ const jwt = require('jsonwebtoken');
 exports.privateRoute = (req, res, next) => {
   const { authToken } = req.cookies;
   if (!authToken) {
-    return res.status(401)
-      .redirect('/login');
+    return res.status(401).json({ success: false, message: 'you have to log in first' });
   }
   try {
     const verified = jwt.verify(authToken, process.env.TOKEN_SERCRET);
@@ -17,6 +16,6 @@ exports.privateRoute = (req, res, next) => {
 
 exports.notLogged = (req, res, next) => {
   const { authToken } = req.cookies;
-  if (authToken) return res.redirect('/');
+  if (authToken) return res.json({ message: 'already logged in!' });
   next();
 };
