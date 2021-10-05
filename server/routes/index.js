@@ -7,6 +7,6 @@ const router = express.Router();
 
 router.post('/singup', addUserHandler);
 router.post('/addcard', addCardHandler);
-router.get('/api/product/category/:categoryId', getCategory);
+router.get('/product/category/:categoryId', getCategory);
 
 module.exports = router;

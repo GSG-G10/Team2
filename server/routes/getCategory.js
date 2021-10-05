@@ -1,9 +1,9 @@
 const { getCategoryQuery } = require('../database/queries');
 
-const getCategory = (req, res) => {
+const getCategory = (req, res, next) => {
   const { categoryId } = req.params;
   getCategoryQuery(categoryId)
-    .then((data) => res.json(data.rows))
-    .catch((err) => res.json({ error: err }));
+    .then(({ rows }) => res.json({ data: rows }))
+    .catch((err) => next(err));
 };
 module.exports = getCategory;
