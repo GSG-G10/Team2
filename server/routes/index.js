@@ -13,6 +13,7 @@ const { privateRoute } = require('../middlewares/privateRoute');
 const router = express.Router();
 
 router.use(loginRouter);
+
 router.post('/singup', addUserHandler);
 router.post('/getlast4', getProductslast4Handler);
 router.post('/addcart/:productId/:quantity', privateRoute, addCartHandler);
