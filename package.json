@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/GSG-G10/Team2#readme",
   "dependencies": {
+    "@emotion/styled": "^11.3.0",
     "bcrypt": "^5.0.1",
     "bcryptjs": "^2.4.3",
     "compression": "^1.7.4",

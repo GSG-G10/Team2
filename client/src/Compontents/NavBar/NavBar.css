@@ -1,0 +1,41 @@
+.nav-bar{
+ padding-top: 18px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+   border-bottom: 1px solid #ddd;
+    padding-bottom: 18px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.Nab-Bar{
+  
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  padding-top: 8px;
+
+}
+.list{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    cursor: pointer;
+}
+ a{
+color: #222222;
+text-decoration: none;
+}
+
+.MuiTypography-body1 {
+    font-size: 14px !important;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.00938em;
+   
+}
+.logo{
+    font-size: 20px !important;
+    font-weight: bold;
+}
