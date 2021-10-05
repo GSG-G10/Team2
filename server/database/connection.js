@@ -16,8 +16,7 @@ switch (NODE_ENV) {
     dburl = TEST_DB_URL;
     break;
   default:
-    // throw new Error('DB Connection Failed');
-    dburl = DB_URL;
+    throw new Error('DB Connection Failed');
 }
 const options = {
   connectionString: dburl,

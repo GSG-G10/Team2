@@ -9,8 +9,8 @@ const router = express.Router();
 
 router.post('/singup', addUserHandler);
 router.post('/addcard', addCardHandler);
-router.post('/getcard', getCardHandler);
-router.post('/clearcard', getCardHandler);
-router.post('/deletecard', getCardHandler);
+router.get('/getcard/:userId', getCardHandler);
+router.delete('/clearcard/:userId', clearCardHandler);
+router.delete('/deletecard/:userId/:productId', deleteCardHandler);
 
 module.exports = router;

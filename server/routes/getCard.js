@@ -1,9 +1,10 @@
 const { getCardQuery } = require('../database/queries');
 
-const getCardHandler = (req, res) => {
-  const { userId } = req.body;
+const getCardHandler = (req, res, next) => {
+  const { userId } = req.params;
   getCardQuery(parseInt(userId, 10))
-    .then((result) => res.json((result.rows)))
-    .catch((err) => res.json({ err }));
+    .then(({ rows }) => res.json(({ data: rows })))
+    .catch((err) => res.json({ err }))
+    .catch((err) => next(err));
 };
 module.exports = getCardHandler;

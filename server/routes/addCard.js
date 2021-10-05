@@ -10,8 +10,8 @@ const addCardHandler = (req, res) => {
   });
   if (error === undefined) {
     addCardQuery(userId, productId, quantity)
-      .then(() => res.json({ status: 'scusses' }))
-      .catch((err) => res.json({ status: 'err', error: err }));
+      .then(() => res.json({ status: 'product added to cart successfully' }));
+    // .catch((err) => res.json({ status: 'err', error: err }));
   } else {
     res.json(error);
   }
