@@ -4,16 +4,17 @@ const addCardHandler = require('./addCard');
 const getCardHandler = require('./getCard');
 const deleteCardHandler = require('./deleteCard');
 const clearCardHandler = require('./clearCard');
-
-const { getProduct } = require('../controllers/index');
+const loginRouter = require('./login');
+const { getProduct } = require('../controllers');
+const { privateRoute } = require('../middlewares/privateRoute');
 
 const router = express.Router();
-
+router.use(loginRouter);
 router.post('/singup', addUserHandler);
-router.post('/addcard', addCardHandler);
-router.get('/getcard/:userId', getCardHandler);
-router.delete('/clearcard/:userId', clearCardHandler);
-router.delete('/deletecard/:userId/:productId', deleteCardHandler);
+router.post('/addcard/:productId/:quantity', privateRoute, addCardHandler);
+router.get('/getcard/', privateRoute, getCardHandler);
+router.delete('/clearcard/', privateRoute, clearCardHandler);
+router.delete('/deletecard/:productId', privateRoute, deleteCardHandler);
 
 router.get('/api/product/:productId', getProduct);
 module.exports = router;
