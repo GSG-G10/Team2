@@ -5,6 +5,8 @@ const getCardHandler = require('./getCard');
 const deleteCardHandler = require('./deleteCard');
 const clearCardHandler = require('./clearCard');
 
+const { getProduct } = require('../controllers/index');
+
 const router = express.Router();
 
 router.post('/singup', addUserHandler);
@@ -13,4 +15,5 @@ router.get('/getcard/:userId', getCardHandler);
 router.delete('/clearcard/:userId', clearCardHandler);
 router.delete('/deletecard/:userId/:productId', deleteCardHandler);
 
+router.get('/api/product/:productId', getProduct);
 module.exports = router;
