@@ -2,7 +2,7 @@ const { addCartQuery } = require('../database/queries');
 const { cartValidation } = require('../utiles/validation');
 
 const addCartHandler = (req, res) => {
-  const userId = req.user.id;
+  const { id: userId } = req.user;
   const { productId, quantity } = req.params;
   const { error } = cartValidation.validate({
     userId, productId, quantity,

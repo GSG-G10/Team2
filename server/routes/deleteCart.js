@@ -1,7 +1,7 @@
 const { deleteCartQuery } = require('../database/queries');
 
 const deleteCartHandler = (req, res) => {
-  const userId = req.user.id;
+  const { id: userId } = req.user;
 
   const { productId } = req.params;
   res.json('ok');
