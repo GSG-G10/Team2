@@ -1,4 +1,5 @@
 const express = require('express');
+const getCategory = require('./getCategory');
 const addUserHandler = require('./addUser');
 const addCartHandler = require('./addCart');
 const getCartHandler = require('./getCart');
@@ -13,6 +14,7 @@ router.use(loginRouter);
 router.post('/singup', addUserHandler);
 router.post('/addcart/:productId/:quantity', privateRoute, addCartHandler);
 router.get('/getcart/', privateRoute, getCartHandler);
+router.get('/product/category/:categoryId', getCategory);
 router.delete('/clearcart/', privateRoute, clearCartHandler);
 router.delete('/deletecart/:productId', privateRoute, deleteCartHandler);
 
