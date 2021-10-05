@@ -1,4 +1,4 @@
 const addUserQuery = require('./addUserQuery');
 const addCardQuery = require('./addCardQuery');
-
-module.exports = { addUserQuery, addCardQuery };
+const getSingleProduct = require('./getSingleProduct')
+module.exports = { addUserQuery, addCardQuery,getSingleProduct };
