@@ -7,6 +7,7 @@ exports.privateRoute = (req, res, next) => {
   }
   try {
     const verified = jwt.verify(authToken, process.env.TOKEN_SERCRET);
+
     req.user = verified;
     next();
   } catch (err) {
