@@ -1,10 +1,21 @@
 const express = require('express');
 const addUserHandler = require('./addUser');
-const addCardHandler = require('./addCard');
-const {getProduct} = require('../controllers/index')
-const router = express.Router();
+const addCartHandler = require('./addCart');
+const getCartHandler = require('./getCart');
+const deleteCartHandler = require('./deleteCart');
+const clearCartHandler = require('./clearCart');
+const loginRouter = require('./login');
+const { getProduct } = require('../controllers');
+const { privateRoute } = require('../middlewares/privateRoute');
 
+const router = express.Router();
+router.use(loginRouter);
 router.post('/singup', addUserHandler);
-router.post('/addcard', addCardHandler);
-router.get('/api/product/:productId',getProduct)
+router.post('/addcart/:productId/:quantity', privateRoute, addCartHandler);
+router.get('/getcart/', privateRoute, getCartHandler);
+router.delete('/clearcart/', privateRoute, clearCartHandler);
+router.delete('/deletecart/:productId', privateRoute, deleteCartHandler);
+
+router.get('/api/product/:productId', getProduct);
+
 module.exports = router;
