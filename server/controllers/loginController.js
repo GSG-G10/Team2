@@ -19,7 +19,6 @@ exports.loginPost = async (req, res) => {
 
   // create token and store it in cookies
   const { id, name } = user.rows[0];
-  console.log(id, name);
   createToken(id, name, process.env.TOKEN_SERCRET, res);
   res.send('you are logged in now!');
 };
