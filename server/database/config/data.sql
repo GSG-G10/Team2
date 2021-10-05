@@ -17,7 +17,7 @@ CREATE TABLE category (
 CREATE TABLE product (
     id SERIAL PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
-    price integer,
+    price float,
     description text NOT NULL,
     rate integer,
     category_id integer REFERENCES category(id),
@@ -30,7 +30,8 @@ CREATE TABLE item (
     color text 
 );
 CREATE TABLE cart (
-    user_id integer PRIMARY KEY REFERENCES users(id),
+    id SERIAL PRIMARY KEY,
+    user_id integer REFERENCES users(id),
     product_id  integer  REFERENCES product(id),
     quantity integer
 );

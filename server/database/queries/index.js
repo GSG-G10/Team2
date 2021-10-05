@@ -1,8 +1,17 @@
 const addUserQuery = require('./addUserQuery');
-const addCardQuery = require('./addCardQuery');
+const getCategoryQuery = require('./getCategoryQuery');
 const getSingleProduct = require('./getSingleProduct');
-const filterItems = require('./filterItemsQuery');
+const addCartQuery = require('./addCartQuery');
+const getCartQuery = require('./getCartQuery');
+const clearCartQuery = require('./clearCartQuery');
+const deleteCartQuery = require('./deleteCartQuery');
 
 module.exports = {
-  addUserQuery, addCardQuery, getSingleProduct, filterItems,
+  addUserQuery,
+  addCartQuery,
+  getCartQuery,
+  clearCartQuery,
+  deleteCartQuery,
+  getSingleProduct,
+  getCategoryQuery,
 };
