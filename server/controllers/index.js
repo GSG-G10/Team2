@@ -1,4 +1,5 @@
-const getProduct = require('./getProduct')
-module.exports={
-    getProduct
-}
+const getProduct = require('./getProduct');
+
+module.exports = {
+  getProduct,
+};
