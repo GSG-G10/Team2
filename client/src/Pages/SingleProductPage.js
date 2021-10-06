@@ -1,5 +1,5 @@
-import MayLove from '../Compontents/MayLove/MayLove';
-import SingleProduct from '../Compontents/SingleProduct/SingleProduct';
+import MayLove from '../Components/MayLove/MayLove';
+import SingleProduct from '../Components/SingleProduct/SingleProduct';
 
 function SingleProductPage() {
   return (
