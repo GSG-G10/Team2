@@ -7,6 +7,7 @@
     padding-bottom: 18px;
     margin-left: 5%;
     margin-right: 5%;
+  
 }
 .Nab-Bar{
   
@@ -15,12 +16,15 @@
     justify-content: space-around;
   padding-top: 8px;
 
+
 }
 .list{
     display: flex;
-    flex-direction: row;
+    flex-direction: row ;
     list-style: none;
     cursor: pointer;
+ 
+
 }
  a{
 color: #222222;
@@ -38,4 +42,10 @@ text-decoration: none;
 .logo{
     font-size: 20px !important;
     font-weight: bold;
+}
+.MuiList-padding {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    display: flex;
+    flex-direction: row;
 }

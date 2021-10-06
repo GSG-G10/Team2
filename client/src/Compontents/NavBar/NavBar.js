@@ -1,23 +1,10 @@
 import React from "react";
-import "./NavBar.css";
-import { Typography } from "@material-ui/core";
 import SearchIcon from "@mui/icons-material/Search";
-import { Input } from "@mui/material";
+import { Input,Collapse,ListItemButton } from "@mui/material";
+import {ListItem,List,ListItemText,Typography} from "@material-ui/core";
+import {ExpandLess,ExpandMore} from '@mui/icons-material';
 import Cart from "../Cart/Cart";
-
-import ListItem from "@material-ui/core/ListItem";
-import List from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
-
-import ListItemButton from '@mui/material/ListItemButton';
-
-
-import Collapse from '@mui/material/Collapse';
-
-
-import ExpandLess from '@mui/icons-material/ExpandLess';
-import ExpandMore from '@mui/icons-material/ExpandMore';
-
+import "./NavBar.css";
 function NavBar() {
     const [open, setOpen] = React.useState(true);
 
@@ -42,9 +29,6 @@ function NavBar() {
 
     <div className="Nab-Bar">
         <div className="list">
-       
-    
-   
       <List>
          <a href="/">
           <ListItem button>
@@ -95,28 +79,10 @@ function NavBar() {
          </ListItem>
          </a>
          </List>
-         {/* </a>
-         </List>
-           
-          <ListItem  href="/">
-         <ListItemText primary="SHOP" />
-          </ListItem>
-          <ListItem  href="/">
-         <ListItemText primary="PRODUCTS" />
-          </ListItem>
-          <ListItem  href="/">
-         <ListItemText primary="PAGES" />
-          </ListItem>
-          <ListItem  href="/">
-         <ListItemText primary="BLOG" />
-          </ListItem>
-          <ListItem  href="/">
-         <ListItemText primary="ELEMENTS" />
-          </ListItem>
-          */}
+      
          
         </div>
-        <div className="list">
+        <div className="">
         <List>
          <a href="/">
           <ListItem button>
@@ -130,14 +96,7 @@ function NavBar() {
          </ListItem>
          </a>
          </List>
-            {/* <List>
-        <ListItem  href="/">
-         <ListItemText primary="Sign In" />
-          </ListItem>
-          <ListItem  href="/">
-         <ListItemText primary="Register" />
-          </ListItem>
-          </List> */}
+         
         </div>
     </div>
     </div>
