@@ -1,31 +1,32 @@
-import React from 'react';
+import { useState } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 import { Input, Collapse, ListItemButton } from '@mui/material';
 import {
   ListItem, List, ListItemText, Typography,
 } from '@material-ui/core';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
-
+import { Link } from 'react-router-dom';
 import Cart from '../Cart/Cart';
 import './NavBar.css';
 
 function NavBar() {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = useState(false);
 
   const handleClick = () => {
     setOpen(!open);
   };
   return (
-    <div>
+    <div className="navbar-container">
       <div className="nav-bar">
+        <Link to="/">
+          <Typography className="logo">Furniture</Typography>
+        </Link>
+
         <div>
           <SearchIcon />
           <Input placeholder="Search Product" className="search" />
         </div>
 
-        <div>
-          <Typography className="logo">Furniture</Typography>
-        </div>
         <div>
           <Cart />
         </div>
@@ -34,70 +35,72 @@ function NavBar() {
       <div className="Nab-Bar">
         <div className="list">
           <List>
-            <a href="/">
+            <Link to="/">
               <ListItem button>
                 <ListItemText primary="HOME" />
               </ListItem>
-            </a>
+            </Link>
+            <Link to="/">
+              <ListItemButton onClick={handleClick}>
 
-            <ListItemButton onClick={handleClick}>
+                <ListItemText primary="SHOP" />
+                {open ? <ExpandLess /> : <ExpandMore />}
+              </ListItemButton>
+              <Collapse in={open} timeout="auto" unmountOnExit>
+                <List component="div" disablePadding>
+                  <ListItemButton sx={{ pl: 4 }}>
+                    <ListItem button>
+                      <ListItemText primary="Lights" />
+                    </ListItem>
+                    <ListItem button>
+                      <ListItemText primary="Humans" />
+                    </ListItem>
 
-              <ListItemText primary="SHOP" />
-              {open ? <ExpandLess /> : <ExpandMore />}
-            </ListItemButton>
-            <Collapse in={open} timeout="auto" unmountOnExit>
-              <List component="div" disablePadding>
-                <ListItemButton sx={{ pl: 4 }}>
-                  <ListItem button>
-                    <ListItemText primary="Lights" />
-                  </ListItem>
-                  <ListItem button>
-                    <ListItemText primary="Humans" />
-                  </ListItem>
+                  </ListItemButton>
 
-                </ListItemButton>
-              </List>
-            </Collapse>
+                </List>
 
-            <a href="/">
+              </Collapse>
+            </Link>
+            <Link to="/">
               <ListItem button>
                 <ListItemText primary="PRODUCTS" />
               </ListItem>
-            </a>
+            </Link>
 
-            <a href="/">
+            <Link to="/">
               <ListItem button>
                 <ListItemText primary="PAGES" />
               </ListItem>
-            </a>
+            </Link>
 
-            <a href="/">
+            <Link to="/">
               <ListItem button>
                 <ListItemText primary="BLOG" />
               </ListItem>
-            </a>
+            </Link>
 
-            <a href="/">
+            <Link to="/">
               <ListItem button>
                 <ListItemText primary="ELEMENTS" />
               </ListItem>
-            </a>
+            </Link>
           </List>
 
         </div>
         <div className="">
           <List>
-            <a href="/">
+            <Link to="/">
               <ListItem button>
                 <ListItemText primary="Sign In" />
               </ListItem>
-            </a>
+            </Link>
 
-            <a href="/">
+            <Link to="/">
               <ListItem button>
                 <ListItemText primary="Register" />
               </ListItem>
-            </a>
+            </Link>
           </List>
 
         </div>
