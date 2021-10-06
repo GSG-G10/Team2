@@ -5,6 +5,7 @@ import {
   ListItem, List, ListItemText, Typography,
 } from '@material-ui/core';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
+
 import Cart from '../Cart/Cart';
 import './NavBar.css';
 
