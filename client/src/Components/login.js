@@ -14,7 +14,7 @@ const Login = () => {
 
   const [isLogin, setIsLogin] = useState(false);
   if (isLogin) {
-    window.location.href = '/home';
+    window.location.href = '/';
   }
   const marginBtm = { marginBottom: 10 };
   const paperStyle = {
