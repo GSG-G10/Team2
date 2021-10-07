@@ -1,6 +1,8 @@
 const { addUserQuery } = require('../database/queries');
 const { hashPassword } = require('../middlewares/hashPassword');
 const { signUpValidation } = require('../utiles/validation');
+const { createToken } = require('../utiles/createToken');
+const emailExists = require('../database/queries/checkEmailExists');
 
 const addUserHandler = (req, res) => {
   const {
@@ -13,7 +15,13 @@ const addUserHandler = (req, res) => {
     hashPassword(password)
       .then((hashpass) => {
         addUserQuery(name, email, hashpass, isAdmin, imgUrl)
-          .then(() => res.status(201).json({ status: 'User created successfully' }))
+          .then(() => {
+            emailExists(email)
+              .then((data) => {
+                createToken(data.rows.id, name, process.env.TOKEN_SERCRET, res);
+                return res.status(201).json({ status: 'User created successfully' });
+              });
+          })
           .catch((err) => res.json({ status: 'err', error: err }));
       })
       .catch((err) => res.json({ status: 'err', error: err }));

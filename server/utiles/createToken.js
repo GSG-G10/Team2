@@ -6,6 +6,7 @@ exports.createToken = (id, username, secret, res) => {
   res.cookie('authToken', token, {
     httpOnly: true,
     secure: true,
-  });
+  }).cookie('username', username);
+
   return token;
 };

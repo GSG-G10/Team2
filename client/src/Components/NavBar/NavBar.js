@@ -6,6 +6,7 @@ import {
 } from '@material-ui/core';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
+import Cookies from 'js-cookie';
 import Cart from '../Cart/Cart';
 import './NavBar.css';
 
@@ -18,6 +19,7 @@ function NavBar() {
     setOpen(!open);
   };
   useEffect(() => {
+    console.log(Cookies.get('authToken'));
     axios.get('/api/v1/login')
       .then((res) => {
         if (res.data.message === 'already logged in!') {
@@ -101,7 +103,7 @@ function NavBar() {
         </div>
         <div className="">
 
-          {isLogin ? 'login' : (
+          {isLogin ? Cookies.get('username') : (
             <List>
               <ListItem button>
                 <Link to="/login"><ListItemText primary="Sign In" /></Link>
