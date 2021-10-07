@@ -1,10 +1,22 @@
-import MayLove from '../MayLove/MayLove';
+import { useEffect, useState } from 'react';
+
+const axios = require('axios');
+// import MayLove from '../MayLove/MayLove';
 
 function SingleProduct() {
-  return (
-    <div>
+  const [data, setData] = useState('');
 
-      <MayLove />
+  useEffect(() => {
+    axios.get('http://localhost:8080/api/v1/product/2')
+      .then((datas) => setData(datas))
+      .catch((err) => console.log(err));
+  });
+
+  return (
+
+    <div>
+      {console.log(data)}
+      {/* <MayLove /> */}
     </div>
   );
 }

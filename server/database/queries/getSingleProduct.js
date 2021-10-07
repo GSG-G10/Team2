@@ -1,7 +1,7 @@
 const connection = require('../connection');
 
 const getSingleProduct = (productId) => {
-  const sql = {
+  const sql = {git
     text: 'SELECT * FROM product P INNER JOIN item I ON P. id = I.product_id AND P.id = $1',
     values: [productId],
   };
