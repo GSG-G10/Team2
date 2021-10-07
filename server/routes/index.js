@@ -21,6 +21,6 @@ router.get('/getcart/', privateRoute, getCartHandler);
 router.get('/product/category/:categoryId', getCategory);
 router.delete('/clearcart/', privateRoute, clearCartHandler);
 router.delete('/deletecart/:productId', privateRoute, deleteCartHandler);
-router.get('/api/product/:productId', getProduct);
+router.get('/product/:productId', getProduct);
 
 module.exports = router;
