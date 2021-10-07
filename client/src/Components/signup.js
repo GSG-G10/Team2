@@ -56,9 +56,7 @@ const Signup = () => {
         imgUrl: data.image,
       })
         .then(() => {
-          window.location.href = '/home';
-        }, (err) => {
-          console.log(err);
+          window.location.href = '/';
         });
     });
   };

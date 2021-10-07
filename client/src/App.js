@@ -4,17 +4,17 @@ import Signup from './Components/signup';
 import Login from './Components/login';
 import NavBar from './Components/NavBar/NavBar';
 import Footer from './Components/footer';
-// import Loadmore from './Components/Loadmore.js';
-
+import SingleProduct from './Components/SingleProduct/SingleProduct';
 import ImagesSection from './Components/imagesSections';
+import CategoryItems from './Components/categoryItems';
 
 function App() {
   return (
     <div className="container">
       <Router>
+        <NavBar />
         <Switch>
-          <Route exact path="/home">
-            <NavBar />
+          <Route exact path="/">
             <ImagesSection />
           </Route>
           <Route exact path="/login">
@@ -22,6 +22,12 @@ function App() {
           </Route>
           <Route exact path="/signup">
             <Signup />
+          </Route>
+          <Route exact path="/fillter">
+            <CategoryItems />
+          </Route>
+          <Route exact path="/single">
+            <SingleProduct />
           </Route>
         </Switch>
         <Footer />

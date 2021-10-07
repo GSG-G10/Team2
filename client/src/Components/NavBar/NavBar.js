@@ -63,8 +63,14 @@ function NavBar() {
                 <List component="div" disablePadding>
                   <ListItemButton sx={{ pl: 4 }}>
                     <ListItem button>
-                      <ListItemText primary="Lights" />
+                      <Link to="/fillter">
+                        {' '}
+                        <ListItemText primary="Lights" />
+                        {' '}
+                      </Link>
+
                     </ListItem>
+
                     <ListItem button>
                       <ListItemText primary="Humans" />
                     </ListItem>
