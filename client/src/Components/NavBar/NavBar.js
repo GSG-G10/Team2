@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { useState } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 import { Input, Collapse, ListItemButton } from '@mui/material';
@@ -15,6 +16,7 @@ function NavBar() {
   const handleClick = () => {
     setOpen(!open);
   };
+
   return (
     <div className="navbar-container">
       <div className="nav-bar">
