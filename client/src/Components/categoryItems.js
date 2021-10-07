@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import PropTypes from 'prop-types';
 
 import Card from './card';
 import './categoryPage.css';
