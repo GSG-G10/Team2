@@ -15,7 +15,7 @@ const router = express.Router();
 router.use(loginRouter);
 
 router.post('/singup', addUserHandler);
-router.post('/getlast4/', getProductslast4Handler);
+router.post('/getlast4/:start', getProductslast4Handler);
 router.post('/addcart/:productId/:quantity', privateRoute, addCartHandler);
 router.get('/getcart/', privateRoute, getCartHandler);
 router.get('/product/category/:categoryId', getCategory);
