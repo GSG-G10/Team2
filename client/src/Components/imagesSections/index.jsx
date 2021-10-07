@@ -7,9 +7,9 @@ import Image from '../ImgaesComponent';
 
 const ImagesSection = () => (
   <div className="conatiner">
-    <section className="section-one">
-      <Image src={IMG1} alt="no" className="img-one" />
-      <p className="p-one">
+    <section className="image-container section-one">
+      <Image src={IMG1} alt="no" className="img" />
+      <p className="paragraph">
         LED ceiling lamp,
         {' '}
         {' '}
@@ -19,9 +19,9 @@ const ImagesSection = () => (
     </section>
 
     <section className="section-two">
-      <article className="top">
-        <Image src={IMG2} alt="no" className="img-two" />
-        <p className="p-two">
+      <article className="image-container top">
+        <Image src={IMG2} alt="no" className="img" />
+        <p className="paragraph">
           LED ceiling lamp,
           {' '}
           {' '}
@@ -30,9 +30,9 @@ const ImagesSection = () => (
         </p>
       </article>
       <article className="down">
-        <article className="sub">
-          <Image src={IMG3} alt="no" className="img-three" />
-          <p className="p-three">
+        <article className="image-container sub">
+          <Image src={IMG3} alt="no" className="img" />
+          <p className="paragraph">
             LED ceiling lamp,
             {' '}
             {' '}
@@ -40,9 +40,9 @@ const ImagesSection = () => (
             wireless dimmable
           </p>
         </article>
-        <article className="sub2">
-          <Image src={IMG4} alt="no" className="img-four" />
-          <p className="p-four">
+        <article className="image-container sub2">
+          <Image src={IMG4} alt="no" className="img" />
+          <p className="paragraph">
             LED ceiling lamp,
             {' '}
             {' '}
