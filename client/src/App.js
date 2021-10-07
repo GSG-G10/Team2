@@ -1,4 +1,3 @@
-import CategoryItems from './Components/categoryItems';
 import './App.css';
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 import Signup from './Components/signup';

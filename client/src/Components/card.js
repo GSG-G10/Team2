@@ -11,10 +11,7 @@ const CardProduct = ({
   imgUrl, title, price, rate,
 }) => (
   <>
-    <Card sx={{
-      maxWidth: 200, height: 380, boxShadow: 'none', margin: '10px',
-    }}
-    >
+    <Card sx={{ maxWidth: 200, height: 380, boxShadow: 'none' }}>
       <CardMedia
         component="img"
         height="230"
@@ -22,19 +19,13 @@ const CardProduct = ({
         alt="green iguana"
       />
       <CardContent sx={{ paddingTop: '10px', paddingBottom: 0 }}>
-        <Typography sx={{ display: 'flex', justifyContent: 'center', fontSize: '1rem' }} gutterBottom variant="h5" component="div">
+        <Typography sx={{ fontSize: '1rem' }} gutterBottom variant="h5" component="div">
           {title}
         </Typography>
-        <Typography
-          sx={{
-            display: 'flex', justifyContent: 'center', fontSize: '1.2rem', fontWeight: 'bold', color: 'black',
-          }}
-          variant="body2"
-          color="text.secondary"
-        >
-          {`${price}$`}
+        <Typography sx={{ fontSize: '1.2rem', fontWeight: 'bold', color: 'black' }} variant="body2" color="text.secondary">
+          {price}
         </Typography>
-        <Rating name="read-only" sx={{ display: 'flex', justifyContent: 'center', fontSize: '1.3rem' }} value={rate} readOnly />
+        <Rating name="read-only" sx={{ fontSize: '1.3rem' }} value={rate} readOnly />
 
       </CardContent>
       <CardActions sx={{ display: 'flex', justifyContent: 'center', paddingTop: 0 }}>
@@ -50,6 +41,7 @@ CardProduct.propTypes = {
   title: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   rate: PropTypes.number.isRequired,
+
 };
 
 export default CardProduct;
