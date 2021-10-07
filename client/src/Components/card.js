@@ -5,6 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Rating from '@mui/material/Rating';
+import PropTypes from 'prop-types';
 
 const CardProduct = ({
   imgUrl, title, price, rate,
@@ -35,5 +36,11 @@ const CardProduct = ({
   </>
 
 );
+CardProduct.propTypes = {
+  imgUrl: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  rate: PropTypes.number.isRequired,
 
+};
 export default CardProduct;
