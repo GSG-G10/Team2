@@ -1,3 +1,4 @@
+import CategoryItems from './Components/categoryItems';
 import './App.css';
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 import Signup from './Components/signup';
@@ -10,6 +11,11 @@ import ImagesSection from './Components/imagesSections';
 
 function App() {
   return (
+<<<<<<< HEAD
+    <>
+      <CategoryItems />
+    </>
+=======
     <div className="container">
       <Router>
         <Switch>
@@ -27,6 +33,7 @@ function App() {
         <Footer />
       </Router>
     </div>
+>>>>>>> 74589dccca48fa72e6db5eeaf78492ee74ffc51c
   );
 }
 
