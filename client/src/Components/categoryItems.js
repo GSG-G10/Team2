@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import Card from './card';
 import './categoryPage.css';
 
-const CategoryItems = ({ categoryId }) => {
+const CategoryItems = () => {
   const [items, setItems] = useState([]);
   const [error, setError] = useState([]);
 
@@ -15,7 +15,7 @@ const CategoryItems = ({ categoryId }) => {
   useEffect(() => {
     const fetchItems = async () => {
       try {
-        const res = await axios.get(`/api/v1/product/category/${categoryId}`);
+        const res = await axios.get('/api/v1/product/category/1');
         setItems(res.data.data);
       } catch (e) {
         setError(...error, e);
@@ -40,11 +40,6 @@ const CategoryItems = ({ categoryId }) => {
 
     </>
   );
-};
-
-CategoryItems.propTypes = {
-  categoryId: PropTypes.number.isRequired,
-
 };
 
 export default CategoryItems;
