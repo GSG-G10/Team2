@@ -7,13 +7,18 @@ import './categoryPage.css';
 
 const CategoryItems = () => {
   const [items, setItems] = useState([]);
+  const [error, setError] = useState([]);
 
   console.log(items, 'before');
 
   useEffect(() => {
     const fetchItems = async () => {
-      const res = await axios.get('/api/v1/product/category/1');
-      setItems(res.data.data);
+      try {
+        const res = await axios.get('/api/v1/product/category/1');
+        setItems(res.data.data);
+      } catch (e) {
+        setError(...error, e);
+      }
     };
 
     fetchItems();
