@@ -1,33 +1,35 @@
+.navbar-container {
+    padding: 0 5%;
+}
+
 .nav-bar{
- padding-top: 18px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-   border-bottom: 1px solid #ddd;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
     padding-bottom: 18px;
-    margin-left: 5%;
-    margin-right: 5%;
-  
+    padding: 18px 16px 0 16px;
 }
+
 .Nab-Bar{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-  padding-top: 8px;
+    justify-content: space-between;
+    padding-top: 8px;
 
 
 }
+
 .list{
     display: flex;
     flex-direction: row ;
     list-style: none;
     cursor: pointer;
- 
-
 }
- a{
-color: #222222;
-text-decoration: none;
+
+a {
+    color: #222222;
+    text-decoration: none;
 }
 
 .MuiTypography-body1 {
@@ -38,10 +40,12 @@ text-decoration: none;
     letter-spacing: 0.00938em;
    
 }
+
 .logo{
     font-size: 20px !important;
     font-weight: bold;
 }
+
 .MuiList-padding {
     padding-top: 8px;
     padding-bottom: 8px;
