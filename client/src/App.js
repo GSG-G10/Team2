@@ -7,10 +7,12 @@ import Footer from './Components/footer';
 function App() {
   const history = createBrowserHistory();
   return (
-    <Router history={history}>
-      <NavBar />
-      <Footer />
-    </Router>
+    <div className="container">
+      <Router history={history}>
+        <NavBar />
+        <Footer />
+      </Router>
+    </div>
   );
 }
 
