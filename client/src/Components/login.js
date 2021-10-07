@@ -4,13 +4,12 @@ import {
 } from '@mui/material';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import { Redirect } from 'react-router-dom';
 
 const axios = require('axios');
 
 const Login = () => {
-  const [data, setData] = useState({ username: '', password: '' });
-  const [error, setError] = useState({ username: false, password: false });
+  const [data, setData] = useState({ email: '', password: '' });
+  const [error, setError] = useState({ email: false, password: false });
   const [LoginError, setLoginError] = useState('');
 
   const [isLogin, setIsLogin] = useState(false);
@@ -23,29 +22,30 @@ const Login = () => {
   };
   const avatarStyle = { backgroundColor: '#1bbd7e' };
   const btnstyle = { margin: '8px 0' };
+
   const handleError = (callback) => {
-    if (data.username === '' && data.password === '') {
-      setError({ username: true, password: true });
-    } else if (data.username === '') {
-      setError({ username: true, password: false });
+    if (data.email === '' && data.password === '') {
+      setError({ email: true, password: true });
+    } else if (data.email === '') {
+      setError({ email: true, password: false });
     } else if (data.password === '') {
-      setError({ username: false, password: true });
+      setError({ email: false, password: true });
     } else {
-      setError({ username: false, password: false });
+      setError({ email: false, password: false });
       callback();
     }
   };
 
   const loginHandle = () => {
     handleError(() => {
-      axios.post('/login', {
-        username: data.username,
+      axios.post('/api/v1/login', {
+        email: data.email,
         password: data.password,
       })
         .then(() => {
           setIsLogin(true);
         }, () => {
-          setLoginError('erorrrrrrr');
+          setLoginError('email or email not valid');
         });
     });
   };
@@ -57,16 +57,16 @@ const Login = () => {
           <h2>Sign In</h2>
         </Grid>
         <TextField
-          label="Username"
-          placeholder="Enter username"
+          label="email"
+          placeholder="Enter email"
           fullWidth
           required
-          error={!!error.username}
-          value={data.username}
+          error={!!error.email}
+          value={data.email}
           onChange={(e) => {
-            setData({ ...data, username: e.target.value });
+            setData({ ...data, email: e.target.value });
           }}
-          helperText={error.username ? 'This Field is required' : null}
+          helperText={error.email ? 'This Field is required' : null}
           style={marginBtm}
         />
         <TextField
@@ -102,15 +102,11 @@ const Login = () => {
         </Typography>
         <Typography>
           Do you have an account ?
-          <Link to="/#">
+          <Link to="/singup">
             Sign Up
           </Link>
         </Typography>
       </Paper>
-      {/* <Router> */}
-
-      {isLogin ? <Redirect to="/somewhere/else" /> : null}
-      {/* </Router> */}
 
     </Grid>
   );

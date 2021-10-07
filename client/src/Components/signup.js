@@ -48,15 +48,15 @@ const Signup = () => {
 
   const signupHandler = () => {
     handleError(() => {
-      axios.post('/signup', {
+      axios.post('/api/v1/singup', {
         name: data.name,
         email: data.email,
-        image: data.image,
         password: data.password,
-        password2: data.password2,
+        isAdmin: false,
+        imgUrl: data.image,
       })
-        .then((response) => {
-          console.log(response);
+        .then(() => {
+          window.location.href = '/home';
         }, (err) => {
           console.log(err);
         });

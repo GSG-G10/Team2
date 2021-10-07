@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 import { Input, Collapse, ListItemButton } from '@mui/material';
 import {
@@ -9,12 +9,23 @@ import { Link } from 'react-router-dom';
 import Cart from '../Cart/Cart';
 import './NavBar.css';
 
+const axios = require('axios');
+
 function NavBar() {
   const [open, setOpen] = useState(false);
-
+  const [isLogin, setIsLogin] = useState(false);
   const handleClick = () => {
     setOpen(!open);
   };
+  useEffect(() => {
+    axios.get('/api/v1/login')
+      .then((res) => {
+        if (res.data.message === 'already logged in!') {
+          setIsLogin(true);
+        }
+      })
+      .catch((err) => console.log(err));
+  }, []);
   return (
     <div className="navbar-container">
       <div className="nav-bar">
@@ -89,19 +100,18 @@ function NavBar() {
 
         </div>
         <div className="">
-          <List>
-            <Link to="/">
-              <ListItem button>
-                <ListItemText primary="Sign In" />
-              </ListItem>
-            </Link>
 
-            <Link to="/">
+          {isLogin ? 'login' : (
+            <List>
               <ListItem button>
-                <ListItemText primary="Register" />
+                <Link to="/login"><ListItemText primary="Sign In" /></Link>
               </ListItem>
-            </Link>
-          </List>
+
+              <ListItem button>
+                <Link to="/signup"><ListItemText primary="Register" /></Link>
+              </ListItem>
+            </List>
+          )}
 
         </div>
       </div>
