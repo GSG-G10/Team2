@@ -4,6 +4,8 @@ import Signup from './Components/signup';
 import Login from './Components/login';
 import NavBar from './Components/NavBar/NavBar';
 import Footer from './Components/footer';
+// import Loadmore from './Components/Loadmore.js';
+
 import ImagesSection from './Components/imagesSections';
 
 function App() {
