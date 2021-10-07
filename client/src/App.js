@@ -1,17 +1,18 @@
 import './App.css';
-import { Router } from 'react-router-dom';
-import { createBrowserHistory } from 'history';
+import { BrowserRouter as Router } from 'react-router-dom';
 import NavBar from './Components/NavBar/NavBar';
+import Footer from './Components/footer';
 import ImagesSection from './Components/imagesSections';
 
 function App() {
-  const history = createBrowserHistory();
   return (
-
-    <Router history={history}>
-      <NavBar />
-      <ImagesSection />
-    </Router>
+    <div className="container">
+      <Router>
+        <NavBar />
+        <ImagesSection />
+        <Footer />
+      </Router>
+    </div>
   );
 }
 

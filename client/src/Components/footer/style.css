@@ -1,0 +1,41 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 300;
+  color: #777;
+  background-color: #fff;
+  padding: 0 16px;
+}
+
+.copy-rihgt {
+  display: flex;
+}
+.footer-copyrigh {
+  font-size: 1.2rem;
+  color: #777;
+}
+.footer-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  color: #777;
+}
+
+.social-icons {
+  font-size: 1.6rem;
+  display: flex;
+}
+.social-facebook {
+  color: #8f79ed;
+}
+.social-twitter {
+  color: #79c8ed;
+}
+.social-instagram {
+  color: #dd6d9a;
+}
+.social-pinterest {
+  color: #e66262;
+}
