@@ -14,7 +14,17 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(compression());
 app.use(cookieParser());
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'X-Requested-With');
+  next();
+});
 app.disable('x-powered-by');
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'X-Requested-With');
+  next();
+});
 app.use('/api/v1/', router);
 
 if (NODE_ENV === 'production') {

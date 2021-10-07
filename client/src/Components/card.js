@@ -6,6 +6,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Rating from '@mui/material/Rating';
+import PropTypes from 'prop-types';
 
 const CardProduct = ({
   imgUrl, title, price, rate,
@@ -45,7 +46,13 @@ const CardProduct = ({
   </>
 
 );
+CardProduct.propTypes = {
+  imgUrl: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  rate: PropTypes.number.isRequired,
 
+<<<<<<< HEAD
 CardProduct.propTypes = {
 
   imgUrl: PropTypes.string.isRequired,
@@ -53,5 +60,7 @@ CardProduct.propTypes = {
   price: PropTypes.number.isRequired,
   rate: PropTypes.number.isRequired,
 
+=======
+>>>>>>> 74589dccca48fa72e6db5eeaf78492ee74ffc51c
 };
 export default CardProduct;
